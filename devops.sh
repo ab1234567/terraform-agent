@@ -4,8 +4,7 @@ echo "start"
 cd /home/azuredevopsuser
 mkdir agent
 cd agent
-
-
+echo "ready to start"
 AGENTRELEASE="$(curl -s https://api.github.com/repos/Microsoft/azure-pipelines-agent/releases/latest | grep -oP '"tag_name": "v\K(.*)(?=")')"
 AGENTURL="https://vstsagentpackage.azureedge.net/agent/${AGENTRELEASE}/vsts-agent-linux-x64-${AGENTRELEASE}.tar.gz"
 echo "Release "${AGENTRELEASE}" appears to be latest" 
